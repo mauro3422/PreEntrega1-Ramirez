@@ -12,7 +12,7 @@ function Convertidor(monto,op){
 
     if(op==1){
         MontoDevolver=monto/P_DOLAR;
-        alert(`Te corresponde $${MontoDevolver} USD`);
+        alert(`Te corresponde $${parseInt(MontoDevolver)} USD`);
     }else{
         MontoDevolver=monto*P_DOLAR;
         alert(`Te corresponde $${MontoDevolver} P ARG`);
