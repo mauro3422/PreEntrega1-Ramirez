@@ -22,17 +22,16 @@ function Convertidor(monto,op){
 
 }
 saludo();//Llamo la funcion
-
-let op;
-
-let mon;
-let opD;
+//Declaro las variables afuera del do while para que no se pisen dentro del dowhile.
+let op;//Opcion de la operacion
+let mon;//Monto que recibimos del usuario
+let opD;//Opcion de salida del usuario
 do {
     do {
         op=prompt(`Que operacion desea realizar el dia de hoy?${n} \n1:Pesos Arg a Dolar blue \n2:Dolar a pesos Arg \n3:Cambiar nombre de usuario`);
-    } while ((op<=0||op>4)||(isNaN(op)));
+    } while ((op<=0||op>4)||(isNaN(op)));//Si la opcion no se encuentra entre 0 y 4 O si entra un string devolvera un true y el ciclo se repetira.
     
-    switch (op) {
+    switch (op) {//Los casos que tomara depediendo de lo que haya elegido el usuario
         case "1":
             mon=prompt('Ingrese la cantidad de pesos que se transformaran a dolares blue.');
             Convertidor(mon,op);
@@ -45,9 +44,10 @@ do {
             saludo();
             break;
     }
-    do {
+    do {//Verifico que el usuario elija unas de las opciones que se pueden.
         opD=prompt(`Desea hacer alguna otra operacion?\n si \n no`);
-    } while ((!isNaN(n)));    
+    } while ((!isNaN(n))||(!(opD.toLowerCase()==="si"||(opD.toLowerCase()==="no"))));//Si entra un numero  O !(entra si O entra No) Cualquiera de los casos si me devuelve true se repetira el ciclo.
     
-} while ('si'==opD.toLowerCase());
+} while ('si'==opD.toLowerCase());//Verifico  si el usuario quiere hacer algo de las opciones.
 
+alert(`Regresa pronto! ${n}`)
