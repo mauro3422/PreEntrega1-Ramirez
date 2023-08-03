@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Sinova W01 Regular";
+    src: url("https://db.onlinewebfonts.com/t/e37d94b1348dfa0453f19256251dc80e.eot");
+    src: url("https://db.onlinewebfonts.com/t/e37d94b1348dfa0453f19256251dc80e.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/e37d94b1348dfa0453f19256251dc80e.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/e37d94b1348dfa0453f19256251dc80e.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/e37d94b1348dfa0453f19256251dc80e.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/e37d94b1348dfa0453f19256251dc80e.svg#Sinova W01 Regular")format("svg");
+}
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family:'Sinova W01 Regular';
+}
+a{
+    color: black;
+}

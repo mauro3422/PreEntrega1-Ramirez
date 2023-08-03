@@ -1,0 +1,77 @@
+header{
+    .irCont{
+        opacity: 0;
+        &:focus{
+            opacity: 1;
+        }
+    }
+    background-color: $navBackgroudColor;
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        gap: 2rem;
+        justify-items: center;
+        align-items: center;
+        figure{
+            width: 50%;
+            margin-left:-4rem ;
+            img{
+                width: 100%;
+            }
+        
+        }
+        form{
+            width: 120%;
+            input{
+                width: 80%;
+                padding: 0.3rem;
+                border: solid black 0.1rem;
+                border-radius: 0.3rem;
+                background-color: rgb(255, 242, 249);
+            }
+        }
+        ul{
+
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+
+            li{
+                width: 30%;
+            
+                a{
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    width: 60%;
+                    
+                    background-color: rgb(254, 131, 198);
+                    color:  white;
+                    text-shadow: 2px 2px 4px rgb(58, 57, 58);
+                    padding:0.8rem;
+                    border: solid rgb(250, 78, 171) 0.1rem;
+                    border-radius: 0.4rem;
+                    transition:all 0.5s ease 0.1s;
+                    &::after{
+                        content:'';
+                        width: 5px;
+                        height: 5px;
+                        background: red;
+                        position: absolute ;
+                        z-index: 1;
+                        transform-origin: center;
+                    }
+                    &:hover,&:focus{
+                        background-color:rgb(250, 78, 171);
+                        border:rgb(0, 0, 0) solid 0.1rem ;
+                        color: black;
+                        text-shadow: 2px 2px 5px rgb(0, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+    }

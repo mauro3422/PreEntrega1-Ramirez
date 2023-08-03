@@ -1,6 +1,11 @@
+//import base
+@import 'base/_variables';
+@import 'base/_resets'; 
 
-
+@import 'components/_navbar';
 
 //Import Layouts
 
 @import 'layouts/_index';
+
+
