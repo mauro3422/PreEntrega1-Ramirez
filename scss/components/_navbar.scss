@@ -1,26 +1,35 @@
 header{
+    //Boton para accesibilidad para ir directamente al contenido.
     .irCont{
         opacity: 0;
         &:focus{
             opacity: 1;
         }
     }
+    padding-bottom: 0.5rem;
     background-color: $navBackgroudColor;
+    border-bottom: 0.1rem rgb(250, 78, 171) solid;
     nav{
+        //Distrubuyo los elementos con grid
         display: grid;
         grid-template-columns: 1fr 1fr 2fr;
         gap: 2rem;
         justify-items: center;
         align-items: center;
+
         figure{
+            //Le doy el tamaño a la imagen
             width: 50%;
+            border-radius: 100%;
             margin-left:-4rem ;
+            border: solid 0.1rem black;
             img{
                 width: 100%;
             }
         
         }
         form{
+            //tamaño al input y form para que quede estetico
             width: 120%;
             input{
                 width: 80%;
@@ -31,45 +40,53 @@ header{
             }
         }
         ul{
-
+            //Distrubuyo los elementos del ul con flex
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content:space-around;
             text-align: center;
 
             li{
-                width: 30%;
-            
-                a{
+                //El tamaño del li, aca le doy sus colores y todo a cada li, para poder dps usar el "a" para poder crear un boton con animaciones
+                    width: 20%;
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
-
-
-                    width: 60%;
-                    
-                    background-color: rgb(254, 131, 198);
-                    color:  white;
-                    text-shadow: 2px 2px 4px rgb(58, 57, 58);
-                    padding:0.8rem;
+                    background: rgb(254, 131, 198);
+                    text-shadow: 2px 2px 2px rgb(58, 57, 58);
                     border: solid rgb(250, 78, 171) 0.1rem;
                     border-radius: 0.4rem;
-                    transition:all 0.5s ease 0.1s;
-                    &::after{
-                        content:'';
-                        width: 5px;
-                        height: 5px;
-                        background: red;
-                        position: absolute ;
-                        z-index: 1;
-                        transform-origin: center;
+                    transition: .3s ease all;
+                    //Le doy position relative para que pueda poscionarse con el otro position absolute
+                    position: relative;
+                    overflow: hidden;//Esto es para ocultar el exceso del boton after
+                    
+                    &::after{//elemento que se hara un circulo
+                        content:"";
+                        width: 1px;
+                        height: 1px;
+                        background: none;
+                        position: absolute;//Hago que el elemento se poscione sobre todo
+                        z-index: 1;//con eso creo las capas para que se pueda poscionar encima del li
+                        border-radius: 100%;
+                        transition: .3s ease-in-out all;
+                        
                     }
-                    &:hover,&:focus{
-                        background-color:rgb(250, 78, 171);
-                        border:rgb(0, 0, 0) solid 0.1rem ;
+                    &:hover::after{
+                       transform: scale(150);
+                       background: rgb(250, 78, 171);
+                       border: 0.5rem solid rgb(236, 56, 164);
+                    }
+                    
+                a{  
+                    color: white;
+                    width: 100%;  
+                    padding: 0.8rem;
+                    transition: .3s ease-in-out all;
+                    position: relative;//Esto es para poder trabajar con position
+                    z-index: 2;//Es para que el bloque se poscione arriba
+                    &:hover{
                         color: black;
-                        text-shadow: 2px 2px 5px rgb(0, 0, 0);
-                        //borrar
                     }
                 }
             }

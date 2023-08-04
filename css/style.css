@@ -17,7 +17,9 @@ a {
 }
 
 header {
+  padding-bottom: 0.5rem;
   background-color: rgb(255, 242, 249);
+  border-bottom: 0.1rem rgb(250, 78, 171) solid;
 }
 header .irCont {
   opacity: 0;
@@ -34,7 +36,9 @@ header nav {
 }
 header nav figure {
   width: 50%;
+  border-radius: 100%;
   margin-left: -4rem;
+  border: solid 0.1rem black;
 }
 header nav figure img {
   width: 100%;
@@ -52,39 +56,47 @@ header nav form input {
 header nav ul {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
 }
 header nav ul li {
-  width: 30%;
-}
-header nav ul li a {
+  width: 20%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  background-color: rgb(254, 131, 198);
-  color: white;
-  text-shadow: 2px 2px 4px rgb(58, 57, 58);
-  padding: 0.8rem;
+  background: rgb(254, 131, 198);
+  text-shadow: 2px 2px 2px rgb(58, 57, 58);
   border: solid rgb(250, 78, 171) 0.1rem;
   border-radius: 0.4rem;
-  transition: all 0.5s ease 0.1s;
+  transition: 0.3s ease all;
+  position: relative;
+  overflow: hidden;
 }
-header nav ul li a::after {
+header nav ul li::after {
   content: "";
-  width: 5px;
-  height: 5px;
-  background: red;
+  width: 1px;
+  height: 1px;
+  background: none;
   position: absolute;
   z-index: 1;
-  transform-origin: center;
+  border-radius: 100%;
+  transition: 0.3s ease-in-out all;
 }
-header nav ul li a:hover, header nav ul li a:focus {
-  background-color: rgb(250, 78, 171);
-  border: rgb(0, 0, 0) solid 0.1rem;
+header nav ul li:hover::after {
+  transform: scale(150);
+  background: rgb(250, 78, 171);
+  border: 0.5rem solid rgb(236, 56, 164);
+}
+header nav ul li a {
+  color: white;
+  width: 100%;
+  padding: 0.8rem;
+  transition: 0.3s ease-in-out all;
+  position: relative;
+  z-index: 2;
+}
+header nav ul li a:hover {
   color: black;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 /*# sourceMappingURL=style.css.map */
